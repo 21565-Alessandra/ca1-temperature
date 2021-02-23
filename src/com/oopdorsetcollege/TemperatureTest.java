@@ -11,16 +11,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
-public class Temperature extends JFrame {
+public class TemperatureTest extends JFrame {
 
-    JButton FahrToCelsius;
-    JButton CelsiusToFahr;
+    JButton fahrToCelsius;
+    JButton celsiusToFahr;
     JLabel lblCelsius;
     JLabel lblFahr;
     JTextField textCelsius;
     JTextField textFahrenheit;
 
-    public Temperature () {
+    public TemperatureTest () {
 
         super ("Convert Temperature");
         setLayout (new FlowLayout ());
@@ -35,10 +35,10 @@ public class Temperature extends JFrame {
         textFahrenheit = new JTextField (10);
         add (textFahrenheit);
 
-        CelsiusToFahr = new JButton ("Celsius to Fahrenheit");
-        add (CelsiusToFahr);
-        FahrToCelsius = new JButton ("Fahrenheit to Celsius");
-        add (FahrToCelsius);
+        celsiusToFahr = new JButton ("Celsius to Fahrenheit");
+        add (celsiusToFahr);
+        fahrToCelsius = new JButton ("Fahrenheit to Celsius");
+        add (fahrToCelsius);
 
         JPanel panel = new JPanel(new GridLayout(2, 2, 30, 15));
         panel.add(lblCelsius);
@@ -48,22 +48,23 @@ public class Temperature extends JFrame {
         add(panel, BorderLayout.SOUTH);
 
         JPanel buttonPanel = new JPanel();
-        buttonPanel.add(CelsiusToFahr);
-        buttonPanel.add(FahrToCelsius);
+        buttonPanel.add(celsiusToFahr);
+        buttonPanel.add(fahrToCelsius);
         add(buttonPanel, BorderLayout.SOUTH);
 
-        CelsiusToFahr.addActionListener(new CelsiusListener ());
-        FahrToCelsius.addActionListener(new FahrenheitListener ());
+        celsiusToFahr.addActionListener(new CelsiusListener ());
+        fahrToCelsius.addActionListener(new FahrenheitListener ());
+
 
     }
 
-        private class CelsiusListener implements ActionListener {
+        public class CelsiusListener implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
 
-            if (event.getSource() == CelsiusToFahr){
-                int CelsiusToFahr = (int) (( 9.0/5.0 * (((Double.parseDouble(textCelsius.getText())) + 32))));
-                textFahrenheit.setText(CelsiusToFahr + " °F");
+            if (event.getSource() == celsiusToFahr){
+                int celsiusToFahr = (int) (( 9.0/5.0 * (((Double.parseDouble(textCelsius.getText())) + 32))));
+                textFahrenheit.setText(celsiusToFahr + " °F");
                 textCelsius.requestFocus();
                 textCelsius.selectAll();
             }
@@ -75,9 +76,9 @@ public class Temperature extends JFrame {
 
         public void actionPerformed(ActionEvent event) {
 
-            if (event.getSource() == FahrToCelsius){
-                int FahrToCelsius = (int) ((5.0/9.0 * (((Double.parseDouble(textFahrenheit.getText())) -32))));
-                textCelsius.setText(FahrToCelsius + " °C");
+            if (event.getSource() == fahrToCelsius){
+                int fahrToCelsius = (int) ((5.0/9.0 * (((Double.parseDouble(textFahrenheit.getText())) -32))));
+                textCelsius.setText(fahrToCelsius + " °C");
                 textFahrenheit.requestFocus();
                 textFahrenheit.selectAll();
             }
