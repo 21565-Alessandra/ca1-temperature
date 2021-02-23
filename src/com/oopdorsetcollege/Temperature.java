@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TemperatureConverter extends JFrame {
+public class Temperature extends JFrame {
 
     public JCheckBox checkCelsius;
     public JCheckBox checkFahrenheit;
@@ -15,7 +15,7 @@ public class TemperatureConverter extends JFrame {
     public JTextField textOutput; //private JLabel labelOutput
     public JButton btConversion;
 
-    public TemperatureConverter() {
+    public Temperature() {
 
         super("Temperature Conversion");
 

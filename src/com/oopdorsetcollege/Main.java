@@ -14,10 +14,10 @@ public class  Main {
 
     public static void main(String[] args) {
 
-        TemperatureConverter temperatureConverter = new TemperatureConverter();
-        temperatureConverter.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        temperatureConverter.setSize (500, 200);
-        temperatureConverter.setVisible(true);
+        Temperature temperature = new Temperature ();
+        temperature.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        temperature.setSize (500, 200);
+        temperature.setVisible(true);
 
     }
 
