@@ -1,6 +1,6 @@
 //Alessandra Silva dos Reis - ID 21565
 
-package com.oopdorsetcollege;
+/*package com.oopdorsetcollege;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -86,5 +86,5 @@ public class TemperatureTest extends JFrame {
         }
     }
 
-}
+}*/
 
