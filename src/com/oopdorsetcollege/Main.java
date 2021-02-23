@@ -16,7 +16,7 @@ public class  Main {
 
         Temperature temperature = new Temperature ();
         temperature.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        temperature.setSize (500, 200);
+        temperature.setSize (320, 200);
         temperature.setVisible(true);
 
     }
