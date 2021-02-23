@@ -67,7 +67,7 @@ public class TemperatureConverter extends JFrame {
         public void actionPerformed(ActionEvent event) {
             if (checkCelsius.isSelected()) {
                 int celsiusToFahr = (int) ((9.0 / 5.0 * (((Double.parseDouble(textInsert.getText())) + 32))));
-                textInsert.setText(celsiusToFahr + " °F");
+                textOutput.setText(celsiusToFahr + " °F");
                 textOutput.requestFocus();
                 textOutput.selectAll();
             }
@@ -83,7 +83,7 @@ public class TemperatureConverter extends JFrame {
 
             if (checkFahrenheit.isSelected()) {
                 int fahrToCelsius = (int) ((5.0 / 9.0 * (((Double.parseDouble(textInsert.getText())) - 32))));
-                textInsert.setText(fahrToCelsius + " °C");
+                textOutput.setText(fahrToCelsius + " °C");
                 textOutput.requestFocus();
                 textOutput.selectAll();
             }
