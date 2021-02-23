@@ -6,30 +6,26 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.PortUnreachableException;
+
 
 public class Temperature extends JFrame {
 
     public JCheckBox checkCelsius;
     public JCheckBox checkFahrenheit;
     public JTextField textInsert;
-    public JTextField textOutput; //private JLabel labelOutput
+    public JTextField textOutput;
     public JButton btConversion;
-    public JPanel panel1;
-    public JPanel panel2;
 
     public Temperature() {
 
         super ("Temperature Conversion");
 
+        setLayout(new FlowLayout());
+
         //Set colors
         Color colorBg = new Color(237,125,49);
         Color colorblue = new Color(68,114,196);
         getContentPane().setBackground(colorBg);
-
-
-
-        setLayout(new FlowLayout());
 
         // add checkboxes
         checkCelsius = new JCheckBox("Celsius");
@@ -60,6 +56,9 @@ public class Temperature extends JFrame {
         btConversion.setForeground(Color.WHITE);
         add(btConversion);
 
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(btConversion);
+        add(buttonPanel, BorderLayout.SOUTH);
 
         /*JPanel panel = new JPanel(new GridLayout(3, 2, 5, 5));
         panel.add(checkCelsius);
@@ -68,17 +67,12 @@ public class Temperature extends JFrame {
         panel.add(textOutput);
         add(panel, BorderLayout.SOUTH);*/
 
-
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.add(btConversion);
-        add(buttonPanel, BorderLayout.SOUTH);
-
         btConversion.addActionListener(new ActionOne());
         btConversion.addActionListener(new ActionTwo());
 
     } // end constructor
 
-
+    //function to calculate the conversion of celsius to fahrenheit
     private class ActionOne implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
@@ -94,6 +88,7 @@ public class Temperature extends JFrame {
 
     }
 
+    //function to calculate the conversion of fahrenheit to celsius
     private class ActionTwo implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
